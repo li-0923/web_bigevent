@@ -1,6 +1,4 @@
 $(function() {
-    // 调用获取用户基本信息
-    getUserInfo();
     // 定义getUserInfo() 获取用户基本信息
     function getUserInfo() {
         $.ajax({
@@ -28,6 +26,8 @@ $(function() {
             // }
         })
     }
+    // 调用获取用户基本信息
+    getUserInfo();
     // 渲染用户的头像
     function renderAvatar(user) {
         var name = user.nickname || user.username;
@@ -37,8 +37,8 @@ $(function() {
         if (user.user_pic !== null) {
             // 渲染头像
             $('.layui-nav-img').prop('src', user.user_pic).show()
-            $('.layui-nav-img').siblings().hide();
-            // $('.text-avatar').hide();
+                // $('.layui-nav-img').siblings().hide();
+            $('.text-avatar').hide();
         } else {
             // 渲染文本头像
             $('.layui-nav-img').hide()

@@ -3,6 +3,7 @@ $(function() {
     $('#link_reg').on('click', function() {
         $('.login-box').hide();
         $('.reg-box').show();
+        $('#form_reg')[0].reset();
     });
     // 点击去登录链接
     $('#link_login').on('click', function() {
@@ -39,6 +40,7 @@ $(function() {
             layer.msg('注册成功,请登录')
                 // 成功后自调用跳转到登录界面
             $('#link_login').click();
+            $('#form_login [name=username]').val(data.username)
         })
     })
 
