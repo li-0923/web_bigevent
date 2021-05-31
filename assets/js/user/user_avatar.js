@@ -45,7 +45,7 @@ $(function() {
             },
             success: function(res) {
                 layui.layer.msg(res.message);
-                // window.parent.getUserInfo();
+                window.parent.getUserInfo();
             }
         })
     })

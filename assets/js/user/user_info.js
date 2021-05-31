@@ -43,11 +43,6 @@ $(function() {
                 // 想在 iframe 中调用父页面中的函数可以用window.parent方法
                 // bug BUG
                 window.parent.getUserInfo();
-                // parent.parent.getUserInfo();
-                // top.window.parent.getUserInfo();
-                // parent.getUserInfo();
-                // window.parent.$('#btnLogout').html('123');
-
             }
         })
     })

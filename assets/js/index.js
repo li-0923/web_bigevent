@@ -1,32 +1,32 @@
 $(function() {
     // 定义getUserInfo() 获取用户基本信息
-    function getUserInfo() {
-        $.ajax({
-            method: 'GET',
-            url: '/my/userinfo',
-            // my 开头的请求 需要Authorization 身份认证字段
-            // headers 就是请求头配置对象
-            // headers: {
-            //     Authorization: localStorage.getItem('token') || ''
-            // },
-            success: function(res) {
-                if (res.status !== 0) return layui.layer.msg('获取用户信息失败!')
-                    // console.log(res);
-                renderAvatar(res.data);
-            },
-            // 不论ajax获取成功与否  都会调用 complete 回调函数
-            // complete: function(res) {
-            //     // console.log(res);
-            //     if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
-            //         // 清空token
-            //         localStorage.removeItem('token')
-            //             // 跳转到login页面
-            //         location.href = '/login.html'
-            //     }
-            // }
-        })
-    }
-    // 调用获取用户基本信息
+    window.getUserInfo = function getUserInfo() {
+            $.ajax({
+                method: 'GET',
+                url: '/my/userinfo',
+                // my 开头的请求 需要Authorization 身份认证字段
+                // headers 就是请求头配置对象
+                // headers: {
+                //     Authorization: localStorage.getItem('token') || ''
+                // },
+                success: function(res) {
+                    if (res.status !== 0) return layui.layer.msg('获取用户信息失败!')
+                        // console.log(res);
+                    renderAvatar(res.data);
+                },
+                // 不论ajax获取成功与否  都会调用 complete 回调函数
+                // complete: function(res) {
+                //     // console.log(res);
+                //     if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
+                //         // 清空token
+                //         localStorage.removeItem('token')
+                //             // 跳转到login页面
+                //         location.href = '/login.html'
+                //     }
+                // }
+            })
+        }
+        // 调用获取用户基本信息
     getUserInfo();
     // 渲染用户的头像
     function renderAvatar(user) {
